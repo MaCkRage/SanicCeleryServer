@@ -6,7 +6,7 @@ page = Blueprint('page', __name__)
 
 @page.route('/health')
 def healthy():
-    r = requests.get(request.url_root)
+    r = requests.get(request.base_url)
     status = r.status_code
     message = r.reason
     return render_template('health.html', status=status, message=message)
