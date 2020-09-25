@@ -15,3 +15,6 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')
     FLASK_APP = os.environ.get('FLASK_APP')
 
+    TESTING = os.environ.get('TESTING')
+
+

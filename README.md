@@ -69,3 +69,9 @@ flask db upgrade
 ```bash
 flask run
 ```
+# Запуск тестов
+
+
+```bash
+python -m unittest
+```
