@@ -16,5 +16,5 @@ class Config(object):
     FLASK_APP = os.environ.get('FLASK_APP')
 
     TESTING = os.environ.get('TESTING')
-
+    FLASK_ADMIN_SWATCH = 'cerulean'
 
