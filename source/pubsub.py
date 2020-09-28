@@ -1,6 +1,10 @@
+import os
 import redis
 
-r = redis.StrictRedis(host='localhost', port=6379, db=0)
+
+REDIS_HOST = os.environ.get('REDIS_HOST')
+REDIS_PORT = os.environ.get('REDIS_PORT')
+r = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 p = r.pubsub()
 
 
