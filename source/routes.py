@@ -1,12 +1,17 @@
 import requests
-from flask import Blueprint, render_template, request
+from sanic import Blueprint
 
 page = Blueprint('page', __name__)
 
 
-@page.route('/health')
+@page.route('/')
 def healthy():
-    r = requests.get(request.base_url)
-    status = r.status_code
-    message = r.reason
-    return render_template('health.html', status=status, message=message)
+    return 'HELLOW'
+    # r = requests.get(request.base_url)
+    # status = r.status_code
+    # message = r.reason
+    # return render_template('health.html', status=status, message=message)
+
+
+def send_message():
+    print('Hellow World')

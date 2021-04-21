@@ -1,17 +1,17 @@
-from flask import Flask
-from .database import db
-from .routes import page
-from .settings import Config
-from flask_migrate import Migrate
-from flask_admin import Admin
+from sanic import Sanic
+from settings import Config
+from sanic.response import text
 
 
-def create_app(config_object=Config):
-    app = Flask(__name__)
-    app.config.from_object(config_object)
-    db.init_app(app)
-    app.register_blueprint(page)
-    migrate = Migrate(app, db)
-    admin = Admin(app, name='garpix', template_mode='bootstrap3')
+def create_app(config_object=Config, name='sanic'):
+    app = Sanic(name)
+    app.update_config(config_object)
+
+    @app.get("/")
+    async def hello_world(request):
+        return text("Hello, world.")
 
     return app
+
+
+app = create_app()

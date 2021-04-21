@@ -27,10 +27,10 @@ cp example.env .env
 Устанавливаем виртуальное окружение
 
 ```bash
-virtualenv -p python3.6 venv
+virtualenv python3.7 -m venv venv
 ```
 
-Поднимаем базу данных  с помощью докера
+Поднимаем базу данных с помощью докера
 
 ```bash
 docker-compose up -d
@@ -67,11 +67,24 @@ flask db upgrade
 
 
 ```bash
-flask run
+sanic main.app
+
 ```
+# Запуск celery
+```bash
+celery --app celerybeat.celery worker
+```
+
+
+```bash
+python -m unittest
+```
+
+
 # Запуск тестов
 
 
 ```bash
 python -m unittest
 ```
+
