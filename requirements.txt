@@ -34,3 +34,5 @@ WTForms==2.3.3
 zipp==3.2.0
 sanic==21.3.4
 celery==5.0.5
+manage.py==0.2.10
+envparse==0.2.0
