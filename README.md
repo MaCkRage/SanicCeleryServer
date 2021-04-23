@@ -47,42 +47,21 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-# Работа с базой данных
-init базы
 
-```bash
-flask db init
-```
-migrate базы
-
-```bash
-flask db migrate
-```
-upgrade базы(если нужно)
-
-```bash
-flask db upgrade
-```
 # Запуск сервера
 
-
 ```bash
-sanic main.app
+python manage.py run
 
 ```
-# Запуск celery
+# Запуск celery (из папки backend)
 ```bash
-celery --app celerybeat.celery worker
+celery -A celery.celery worker -B -l INFO 
+опционально:
+...INFO --loglevel=DEBUG
 ```
 
-
-```bash
-python -m unittest
-```
-
-
-# Запуск тестов
-
+# Запуск тестов (пока не работают)
 
 ```bash
 python -m unittest
