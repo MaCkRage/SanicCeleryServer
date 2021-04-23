@@ -3,8 +3,8 @@ clients = {'1234': [], }
 
 
 async def gls_fake(request, ws):
+    data = await ws.recv()
     while True:
-        data = await ws.recv()
         if data in clients.keys():
             id = data
             messages = clients[id]
