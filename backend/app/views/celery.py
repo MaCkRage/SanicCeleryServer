@@ -6,5 +6,9 @@ import json
 async def send_gls_task(**kwargs):
     async with websockets.connect('ws://192.168.10.86:8082/gls/') as ws:
         await ws.send(json.dumps(f'{kwargs}'))
-        request = await ws.recv()
-        print(request)
+        resource = await ws.recv()
+        print(resource)
+        while True:
+            await ws.send(json.dumps(f'{kwargs}'))
+            request = await ws.recv()
+            print(request)
