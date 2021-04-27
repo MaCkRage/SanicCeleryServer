@@ -9,7 +9,7 @@ from settings import Config
 def run(config_object=Config):
     app = Sanic(__name__, strict_slashes=True)
     app.update_config(config_object)
-    app.add_websocket_route(gls_fake, '/gls/')
+    app.add_websocket_route(gls_fake, '/order_pallet/')
 
     try:
         app.go_fast(
