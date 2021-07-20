@@ -1,67 +1,51 @@
-Microservice Empty Python
-# Установка
+# SanicSeleryServer
 
-```bash
-git clone <GIT-РЕПОЗИТОРИЙ_ВАШЕГО_ПРОЕКТА>
-
-cd <НАЗВАНИЕ_ВАШЕГО_ПРОЕКТА>
-```
-
-Переключаемся на ветку `staging`
-
-```bash
-git checkout staging
-
-git push -u origin staging
-```
-
-Копируем файл `example.env` в файл `.env`
+Copy `example.env` in `.env`
 
 ```bash
 cp example.env .env
 ```
 
-Редактируем файл `.env` и изменяем `SECRET_KEY` на любой набор символов, например, название сайта.
-Все остальные параметры можно не трогать.
+Change `.env`s `SECRET_KEY`
 
-Устанавливаем виртуальное окружение
+Install vurtual environment
 
 ```bash
 virtualenv python3.7 -m venv venv
 ```
 
-Поднимаем базу данных с помощью докера
+Up db and docker-compose
 
 ```bash
 docker-compose up -d
 ```
 
-Активируем виртуальное окружение
+activate venv
 
 ```bash
 source venv/bin/activate
 ```
 
-Устанавливаем зависимости
+install requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-# Запуск сервера
+# Runserver
 
 ```bash
 python manage.py run
 
 ```
-# Запуск celery (из папки backend)
+# run celery (from backend/ directory)
 ```bash
 celery -A celery.celery worker -B -l INFO 
 опционально:
 ...INFO --loglevel=DEBUG
 ```
 
-# Запуск тестов (пока не работают)
+# Run tests (still not working)
 
 ```bash
 python -m unittest
