@@ -32,20 +32,20 @@ install requirements
 pip install -r requirements.txt
 ```
 
-# Runserver
+Runserver
 
 ```bash
 python manage.py run
 
 ```
-# run celery (from backend/ directory)
+ run celery (from backend/ directory)
 ```bash
 celery -A celery.celery worker -B -l INFO 
 опционально:
 ...INFO --loglevel=DEBUG
 ```
 
-# Run tests (still not working)
+ Run tests (still not working)
 
 ```bash
 python -m unittest
